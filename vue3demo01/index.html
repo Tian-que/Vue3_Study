@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/vue3.js"></script>
+</head>
+<body>
+    <div id="counter">
+        <h1>counter:{{ counter }}</h1>
+    </div>
+
+    <script>
+        const Counter = {
+            data(){
+                return {
+                    counter:0
+                }
+            },
+            mounted(){
+                setInterval(() => {
+                    this.counter++
+                }, 1000)
+            }
+        }
+        // 创建一个应用，将配置的对象counter的内容渲染到选择器的目标上
+        let app = Vue.createApp(Counter).mount("#counter")
+        console.log(app)
+
+    </script>
+</body>
+</html>
